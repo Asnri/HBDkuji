@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>コンプリート！</title>
 
   <!-- 紙吹雪 -->
@@ -9,40 +10,56 @@
 
   <style>
     body {
-      text-align: center;
-      font-family: sans-serif;
-      margin-top: 120px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background: #ffffff;
+      font-family: sans-serif;
 
       /* フェードイン */
       opacity: 0;
       animation: fadeIn 0.8s ease forwards;
     }
 
+    .container {
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+    }
+
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     h1 {
       font-size: 40px;
       color: #153df1;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 20px;
-      margin-top: 20px;
+      margin: 10px 0;
     }
 
     #next {
       margin-top: 40px;
-      padding: 12px 20px;
+      padding: 12px 24px;
       font-size: 18px;
       background: #153df1;
       color: white;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      transition: 0.2s;
     }
 
     #next:hover {
@@ -53,14 +70,19 @@
 
 <body>
 
-  <h1>🎉 Complete!! 🎉</h1>
-  <p>スタンプ全部集めてくれてありがとう！</p>
-  <p>そんなだいちゃんには...</p>
+  <div class="container">
 
-  <button id="next">NEXT</button>
+    <h1>🎉 Complete!! 🎉</h1>
+
+    <p>スタンプ全部集めてくれてありがとう！</p>
+    <p>そんなだいちゃんには...</p>
+
+    <button id="next">NEXT</button>
+
+  </div>
 
   <script>
-    // 紙吹雪（音なし）
+    // 紙吹雪
     window.onload = () => {
 
       confetti({
@@ -79,7 +101,7 @@
 
     };
 
-    // ラストワンへ（音あり）
+    // ラストワンへ
     document.getElementById("next").onclick = () => {
 
       const sound = new Audio("sound.mp3");
