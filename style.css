@@ -8,121 +8,132 @@
 body{
   background:#fff;
   text-align:center;
-  font-size:16px;
-  line-height:1.2;
 }
 
-/* ヘッダー */
 .header{
-  margin:10px 0;
+  margin:0 auto;
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:10px;
+  gap:15px;
+  margin:30px 0;
 }
 
 .logo{
-  width:70px;
+  float:none;
+  width:100px;
   height:auto;
 }
 
 .title h1{
-  font-size:28px;
+  text-align:left;
+  font-size:40px;
   font-weight:900;
-  margin:0;
 }
 
 .sub{
   color:#e60012;
-  font-size:14px;
+  font-size:16px;
 }
 
-/* カード */
 .card{
-  width:92%;
+  width:90%;
   max-width:420px;
-  margin:10px auto;
-  padding:12px;
+  margin:20px auto;
+  padding:20px;
   border:4px solid #000;
   border-radius:15px;
   box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
 h2{
-  font-size:22px;
-  margin-bottom:10px;
+  font-size:32px;
+  margin-bottom:20px;
 }
 
-/* スタンプ */
 .stamp-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:8px;
+  gap:10px;
 }
 
 .stamp{
-  height:85px;
+  height:90px;
   border:2px dashed #aaa;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:24px;
+  font-size:28px;
   font-weight:bold;
   position:relative;
 }
 
-/* 画像 */
-.stamp img{
-  position:absolute;
-  width:65%;
-  animation: stampPop 0.4s ease-out;
+.stamp.active{
+  background:#e60012;
+  color:#fff;
+  border:none;
 }
 
-/* アニメ */
 @keyframes stampPop {
   0% {
-    transform: scale(2) rotate(-10deg);
+    transform: scale(3) rotate(-12deg);
     opacity: 0;
   }
+
+  40% {
+    transform: scale(0.8) rotate(-8deg);
+    opacity: 1;
+  }
+
+  60% {
+    transform: scale(1.15) rotate(-10deg);
+  }
+
+  80% {
+    transform: scale(0.95) rotate(-10deg);
+  }
+
   100% {
     transform: scale(1) rotate(-10deg);
     opacity: 1;
   }
 }
 
-/* ボタン */
-.stamp-btn {
-  display: none;
-  width: 200px;
-  height: 60px;
-  margin: 15px auto;
-
-  background: #fff;
-  color: #e60012;
-  border: 4px solid #000;
-  border-radius: 18px;
-
-  font-size: 20px;
-  font-weight: bold;
+.stamp img{
+  position:absolute;
+  width:70%;
+  animation:stampPop 0.5s cubic-bezier(.2,1.4,.4,1);
 }
 
-/* スマホ微調整 */
-@media screen and (max-width: 600px) {
+.stamp-btn{
+  display:none;
+  justify-content:center;
+  align-items:center;
 
-  body {
-    font-size: 15px;
-  }
+  width:220px;
+  height:80px;
+  margin:30px auto;
 
-  .stamp {
-    height: 80px;
-    font-size: 22px;
-  }
+  background:#fff;
+  color:#e60012;
 
-  .title h1 {
-    font-size: 24px;
-  }
+  border:4px solid #000;
+  border-radius:18px;
 
-  h2 {
-    font-size: 20px;
-  }
+  font-size:26px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:0 6px 0 #000;
+  transition:all 0.15s ease;
+}
+
+.stamp-btn:hover{
+  transform:translateY(-2px);
+}
+
+.stamp-btn:active{
+  transform:translateY(6px);
+  box-shadow:0 2px 0 #000;
 }
