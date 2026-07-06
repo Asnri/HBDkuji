@@ -1,3 +1,4 @@
+localStorage.clear();
 const stampSound = new Audio("stamp.mp3");
 stampSound.preload = "auto";
 
