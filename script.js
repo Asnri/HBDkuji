@@ -10,7 +10,9 @@ window.onload = () => {
   const prize = params.get("prize");
 
   let got = JSON.parse(localStorage.getItem("got") || "[]");
-
+  console.log("got =", got);
+  alert(JSON.stringify(got));
+  
   const button = document.getElementById("stampButton");
 
   // 保存済みスタンプ表示
