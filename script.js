@@ -1,4 +1,4 @@
-conststampSound = new Audio("stamp.mp3");
+const stampSound = new Audio("stamp.mp3");
 stampSound.preload = "auto";
 
 window.onload = () => {
