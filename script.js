@@ -1,4 +1,3 @@
-alert("動いてる");
 const stampSound = new Audio("stamp.mp3");
 stampSound.preload = "auto";
 
