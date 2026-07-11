@@ -54,7 +54,7 @@ window.onload = () => {
       button.style.display = "none";
 
       // コンプリート判定
-      if (got.length === 9) {
+      if (got.length === 14) {
         setTimeout(() => {
           location.href = "complete.html";
         }, 800);
