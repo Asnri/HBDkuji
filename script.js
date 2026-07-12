@@ -56,7 +56,7 @@ window.onload = () => {
       if (got.length === 14) {
         setTimeout(() => {
           location.href = "complete.html";
-        }, 800);
+        }, 1000);
       }
 
     });
