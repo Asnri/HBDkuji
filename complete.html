@@ -94,7 +94,7 @@
 
   </div>
 
- <script>
+<script>
   // 紙吹雪
   window.onload = () => {
 
@@ -119,16 +119,19 @@
 
     const sound = new Audio("sound.mp3");
 
+    sound.currentTime = 0;
+
     sound.play().catch(err => {
       console.log(err);
+      location.href = "lastone.html";
     });
 
-    setTimeout(() => {
+    sound.onended = () => {
       location.href = "lastone.html";
-    }, 1500);
+    };
 
   };
-</script> 
+</script>
 
 </body>
 </html>
