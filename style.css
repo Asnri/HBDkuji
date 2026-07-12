@@ -21,19 +21,19 @@ body{
 
 .logo{
   float:none;
-  width:100px;
+  width:80px;
   height:auto;
 }
 
 .title h1{
   text-align:left;
-  font-size:40px;
+  font-size:34px;
   font-weight:900;
 }
 
 .sub{
   color:#e60012;
-  font-size:16px;
+  font-size:14px;
 }
 
 .card{
