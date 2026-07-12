@@ -94,38 +94,41 @@
 
   </div>
 
-  <script>
-    // 紙吹雪
-    window.onload = () => {
+ <script>
+  // 紙吹雪
+  window.onload = () => {
 
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      origin: { y: 0.6 }
+    });
+
+    setTimeout(() => {
       confetti({
-        particleCount: 150,
-        spread: 80,
-        origin: { y: 0.6 }
+        particleCount: 100,
+        spread: 120,
+        origin: { y: 0.4 }
       });
+    }, 400);
 
-      setTimeout(() => {
-        confetti({
-          particleCount: 100,
-          spread: 120,
-          origin: { y: 0.4 }
-        });
-      }, 400);
+  };
 
-    };
+  // ラストワンへ
+  document.getElementById("next").onclick = () => {
 
-    // ラストワンへ
-    document.getElementById("next").onclick = () => {
+    const sound = new Audio("sound.mp3");
 
-      const sound = new Audio("sound.mp3");
-      sound.play();
+    sound.play().catch(err => {
+      console.log(err);
+    });
 
-      setTimeout(() => {
-        location.href = "lastone.html";
-      }, 500);
+    setTimeout(() => {
+      location.href = "lastone.html";
+    }, 1500);
 
-    };
-  </script>
+  };
+</script> 
 
 </body>
 </html>
