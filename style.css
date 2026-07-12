@@ -58,11 +58,14 @@ h2{
 }
 
 .stamp{
-  height:90px;
-  border:2px dashed #aaa;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  .stamp {
+  width: 130px;
+  height: 60px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size:28px;
   font-weight:bold;
   position:relative;
